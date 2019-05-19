@@ -12,7 +12,7 @@ module.exports = {
         bundle: './public/src/app.js'
     } ,
     output: {
-        path: path.resolve(__dirname, '../public/dist')
+        path: path.resolve(__dirname, '../public/dist'),
     },
     devtool: isDevelopment && "source-map",
     devServer: {
@@ -61,16 +61,22 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|gif)$/,
+                test: /\.(png|jp(e*)g|svg)$/,
                 use: [
                     {
                         loader: "file-loader",
                         options: {
                             name: '[name].[ext]',
-                            outputPath: '/public/static/img/',
-                            useRelativePath: true,
+                            // useRelativePath: true,
                         }
                     },
+                    // {
+                    //     loader: 'url-loader',
+                    //     options: { 
+                    //         limit: 8000, // Convert images < 8kb to base64 strings
+                    //         name: 'images/[hash]-[name].[ext]'
+                    //     } 
+                    // },
                     {
                         loader: 'image-webpack-loader',
                         options: {

@@ -1,0 +1,26 @@
+.ranking-header {
+    margin-top: 100px;
+    &-wrapper {
+        position: relative;
+    }
+
+    .header {
+        &-title {
+            text-align: center;
+            padding-left: 50px;
+            font-weight: bolder;
+            font-size: $font-size-big;
+        }
+
+        &-logo {
+            &-image {
+                width: 150px;
+                height: 150px;
+                display: block;
+                position: absolute;
+                left: -55px;
+                top: -95px;
+            }
+        }
+    }
+}
