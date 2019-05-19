@@ -35,9 +35,43 @@ Handlebars.registerHelper("getPersonIndex", function(index) {
 });
 
 function createPeopleList(data) {
-    console.log(data)
     var debugContainer = document.getElementsByClassName("ranking-list")[0];
-    debugContainer.innerHTML = debugTemplate(data);
+
+    const validVotes = data.data.filter(item => {
+        return (item.positive && item.negative) && (typeof item.positive == 'number' || typeof item.negative == 'number');
+    });
+
+    const ignoreVotes = data.data.filter(item => {
+        return (!item.positive && !item.negative) || (typeof item.positive != 'number' || typeof item.negative != 'number');
+    });
+
+    validVotes.sort((a, b) => {
+        const posA = (Number(a.positive) / (Number(a.positive) + Number(a.negative))) * 100;
+        const posB = (Number(b.positive) / (Number(b.positive) + Number(b.negative))) * 100;
+
+        if (posA > posB) return -1;
+        if (posA < posB) return 1;
+        return 0;
+    });
+
+    ignoreVotes.sort((a, b) => {
+        const posA = (Number(a.positive) / (Number(a.positive) + Number(a.negative))) * 100;
+        const posB = (Number(b.positive) / (Number(b.positive) + Number(b.negative))) * 100;
+
+        if (posA > posB) return -1;
+        if (posA < posB) return 1;
+        return 0;
+    });
+
+    ignoreVotes.map((item, index) => {
+        validVotes.push(item);
+    })
+
+    const obj = {
+        data: validVotes,
+    };
+    
+    debugContainer.innerHTML = debugTemplate(obj);
 }
 
 createPeopleList(fazenda);
