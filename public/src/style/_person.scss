@@ -1,10 +1,10 @@
 .ranking-list {
     &-person {
         box-sizing: border-box;
+        display: flex;
         padding: 10px;
         position: relative;
         width: 100%;
-        display: flex;
         
         .person-image, .person-info {
             display: inline-block;
@@ -43,6 +43,37 @@
             }
         }
 
+        .person-tooltip {
+            height: 100%;
+            left: 100%;
+            position: absolute;
+            top: calc(50% - 25px);
+            width: 100%;
+            display: none;
+            padding-left: 10px;
+            box-sizing: border-box;
+            
+            .tooltip-baloon {
+                background-color: $color-person-gray;
+                width: 200px;
+                height: 50px;
+                position: relative;
+                border-radius: 10px;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    transform: rotateZ(45deg);
+                    background-color: $color-person-gray;
+                    top: calc(50% - 7.5px);
+                    left: -5px;
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+
         &:nth-child(odd) {
             background-color: $color-person-gray;
         }
@@ -64,6 +95,9 @@
                 &-description {
                     color: $color-font-person-subtitle-hover;
                 }
+            }
+            .person-tooltip {
+                display: block;
             }
         }
 

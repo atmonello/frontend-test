@@ -7,5 +7,17 @@
             <h2 class="person-info-name">{{person.name}}</h2>
             <p class="person-info-description">{{person.description}}</p>
         </div>
+        <div class="person-tooltip">
+            <div class="tooltip-baloon">
+                {{#if person.positive}}
+                    {{#if person.negative}}
+                        <div class="tooltip-baloon-positive">{{person.positive}}</div>
+                        <div class="tooltip-baloon-negative">{{person.negative}}</div>
+                    {{/if}}
+                {{else}}
+                    <div class="tooltip-baloon-age">{{person.age}}</div>
+                {{/if}}
+            </div>
+        </div>
     </li>
 {{/each}}

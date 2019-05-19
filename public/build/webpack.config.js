@@ -22,7 +22,20 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.handlebars$/, loader: "handlebars-loader" },
+            { 
+                test: /\.handlebars$/,
+                use: [
+                    {
+                        loader: "handlebars-loader",
+                        options: {
+                            helperDirs: path.join(__dirname, "../public/src/helpers"),
+                            precompileOptions: {
+                                knownHelpersOnly: false,
+                            },
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.(scss|css)$/,
                 use: [

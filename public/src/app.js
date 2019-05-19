@@ -1,6 +1,5 @@
 import "./style/main.scss";
 import fazenda from "../fazenda.json";
-
 const debugTemplate = require("./template/partials/person.handlebars");
 
 function createPeopleList(data) {
