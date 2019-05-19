@@ -1,8 +1,14 @@
 @import "_reset";
-@import "_colors";
+@import "_variables";
 @import "_grid";
+@import "_person";
 
 body {
     background-color: $color-background;
+    font-family: "Montserrat", Arial, sans-serif;
     height: 100vh;
+
+    p, h1, h2, h3, h4, h5, h6 {
+        margin: 5px 0;
+    }
 }

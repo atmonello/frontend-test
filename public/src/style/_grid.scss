@@ -21,14 +21,11 @@
     &-header, &-list {
         background-color: #fff;
         box-sizing: border-box;
-        padding: 10px;
         width: 100%;
     }
 
-    &-header {        
+    &-header {
         margin: 1rem 0;
-    }
-
-    &-list {
+        padding: 10px;
     }
 }

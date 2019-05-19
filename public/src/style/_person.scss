@@ -1,0 +1,71 @@
+.ranking-list {
+    &-person {
+        box-sizing: border-box;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+        display: flex;
+        
+        .person-image, .person-info {
+            display: inline-block;
+        }
+
+        .person-image {
+            width: 96px;
+            height: 96px;
+            border-radius: 100%;
+            border: 5px solid $color-person-hover;
+            overflow: hidden;
+            
+            .person-image-container {
+                background-size: cover;
+                background-position: 40% 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .person-info {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left: 2rem;
+
+            &-name {
+                color: $color-font-person-title;
+                font-size: $font-size-regular;
+            }
+            
+            &-description {
+                color: $color-font-person-subtitle;
+                font-size: $font-size-small;
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: $color-person-gray;
+        }
+        &:nth-child(even) {
+            background-color: $color-person-white;
+        }
+
+        &:hover {
+            background-color: $color-person-hover;
+
+            .person-image {
+                border-color: $color-person-white;
+            }
+            .person-info {
+                &-name {
+                    color: $color-font-person-title-hover;
+                }
+                
+                &-description {
+                    color: $color-font-person-subtitle-hover;
+                }
+            }
+        }
+
+    }
+}

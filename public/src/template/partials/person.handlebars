@@ -1,0 +1,11 @@
+{{#each data as |person|}}
+    <li class="ranking-list-person">
+        <div class="person-image">
+            <div style="background-image:url({{person.picture}})" class="person-image-container"></div>
+        </div>
+        <div class="person-info">
+            <h2 class="person-info-name">{{person.name}}</h2>
+            <p class="person-info-description">{{person.description}}</p>
+        </div>
+    </li>
+{{/each}}
