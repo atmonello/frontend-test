@@ -9,6 +9,16 @@
         <div class="person-info">
             <h2 class="person-info-name">{{person.name}}</h2>
             <p class="person-info-description">{{person.description}}</p>
+            <div class="person-info-mobile-votes">
+                <div class="mobile-votes mobile-votes-like">
+                    <div class="mobile-votes-title">GOSTAM</div>
+                    <div class="mobile-votes-content">{{getPositive person.positive person.negative}}</div>
+                </div>
+                <div class="mobile-votes mobile-votes-dislike">
+                    <div class="mobile-votes mobile-votes-title">NÃO GOSTAM</div>
+                    <div class="mobile-votes mobile-votes-content">{{getNegative person.positive person.negative}}</div>
+                </div>
+            </div>
         </div>
         <div class="person-tooltip">
             <div class="tooltip-baloon">

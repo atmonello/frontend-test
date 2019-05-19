@@ -38,8 +38,9 @@
                 width: 20px;
                 height: 20px;
                 text-align: center;
-                line-height: 22px;
+                line-height: 20px;
                 font-size: $font-size-index;
+                font-weight: bold;
             }
         }
 
@@ -59,7 +60,84 @@
                 color: $color-font-person-subtitle;
                 font-size: $font-size-small;
             }
+
+            &-mobile-votes {
+                border: 1px solid $color-font-person-subtitle;
+                border-radius: 10px;
+                overflow: hidden;
+                width: 240px;
+                
+                @media (min-width: $screen-md-min) {
+                    display: none;
+                }
+                
+                .mobile-votes {
+                    box-sizing: border-box;
+                    display: flex;
+                    // justify-content: space-between;
+
+                    &-title, &-content {
+                        display: inline-block;
+                        padding: 5px 0;
+                        box-sizing: border-box;
+                    }
+                    
+                    &-title {
+                        width: 150px;
+                        text-align: right;
+                        padding-right: 10px;
+                        color: $color-font-person-title-hover;
+                    }
+                    
+                    &-content {
+                        text-align: center;
+                        width: 90px;
+                        color: $color-font-person-subtitle-hover;
+                    }
+
+                    &-like {
+                        .mobile-votes-title {
+                            border-bottom: 1px solid $color-person-white;
+                        }
+                        .mobile-votes-content {
+                            border-bottom: 1px solid $color-person-hover;
+                        }
+                    }
+
+                    .mobile-votes-title {
+                        background-color: $color-person-hover;
+                    }
+                    
+                    // &-title, &-content {
+                    //     display: inline-block;
+                    // }
+
+                    // &-title {
+                    //     box-sizing: border-box;
+                    //     background-color: $color-person-hover;
+                    //     width: 150px;
+                    //     padding: 5px;
+                    //     text-align: right;
+                    //     color: $color-font-person-title-hover;
+                    // }
+
+                    // &-content {
+                    //     width: 75px;
+                    //     text-align: center;
+                    // }
+                    
+                    // &-like {
+                    //     .mobile-votes-title {
+                    //         border-bottom: 1px solid $color-person-white;
+                    //     }
+                    //     .mobile-votes-content {
+                    //         border-bottom: 1px solid $color-person-hover;
+                    //     }
+                    // }
+                }
+            }
         }
+
 
         .person-tooltip {
             left: 100%;
@@ -132,25 +210,30 @@
             background-color: $color-person-white;
         }
 
-        &:hover {
-            background-color: $color-person-hover;
-
-            .person-image {
-                border-color: $color-person-white;
-            }
-            .person-info {
-                &-name {
-                    color: $color-font-person-title-hover;
+        @media (min-width: $screen-md-min) {
+            &:hover {
+                background-color: $color-person-hover;
+    
+                .person-image {
+                    &-container {
+                        border-color: $color-person-white;
+                    }
                 }
-                
-                &-description {
-                    color: $color-font-person-subtitle-hover;
+                .person-info {
+                    &-name {
+                        color: $color-font-person-title-hover;
+                    }
+                    
+                    &-description {
+                        color: $color-font-person-subtitle-hover;
+                    }
                 }
-            }
-            .person-tooltip {
-                display: block;
+                .person-tooltip {
+                    display: block;
+                }
             }
         }
+
 
     }
 }

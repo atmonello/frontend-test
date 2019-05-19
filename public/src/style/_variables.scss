@@ -16,3 +16,11 @@ $font-size-index: 14px;
 $font-size-regular: 18px;
 $font-size-large: 24px;
 $font-size-big: 30px;
+
+// Screen sizes
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
