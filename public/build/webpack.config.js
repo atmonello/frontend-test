@@ -27,12 +27,6 @@ module.exports = {
                 use: [
                     {
                         loader: "handlebars-loader",
-                        options: {
-                            helperDirs: path.join(__dirname, "../public/src/helpers"),
-                            precompileOptions: {
-                                knownHelpersOnly: false,
-                            },
-                        }
                     }
                 ]
             },

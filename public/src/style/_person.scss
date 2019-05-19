@@ -44,32 +44,65 @@
         }
 
         .person-tooltip {
-            height: 100%;
             left: 100%;
             position: absolute;
             top: calc(50% - 25px);
-            width: 100%;
             display: none;
             padding-left: 10px;
             box-sizing: border-box;
             
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                transform: rotateZ(45deg);
+                background-color: $color-person-white;
+                top: 50%; //calc(50% - 7.5px);
+                left: 5px;
+                width: 15px;
+                height: 15px;
+            }
+
             .tooltip-baloon {
-                background-color: $color-person-gray;
+                background-color: $color-person-white;
                 width: 200px;
-                height: 50px;
                 position: relative;
                 border-radius: 10px;
+                display: flex;
+                overflow: hidden;
 
-                &::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    transform: rotateZ(45deg);
-                    background-color: $color-person-gray;
-                    top: calc(50% - 7.5px);
-                    left: -5px;
-                    width: 15px;
-                    height: 15px;
+
+                &-data {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+
+                    &-positive, &-negative {
+                        width: 50%;
+                    }
+
+                    &-positive {
+                        border-right: 1px solid $color-background;
+                    }
+
+                    .baloon-data {
+                        text-align: center;
+                        font-weight: bold;
+                        
+                        &-header {
+                            padding: 5px;
+                            background-color: $color-person-hover;
+                            color: $color-font-person-title-hover;
+                            font-size: $font-size-tiny;
+                        }
+                        
+                        &-content {
+                            padding: 10px;
+                            color: $color-font-person-subtitle;
+                            font-size: $font-size-large;
+                        }
+                    }
                 }
             }
         }
