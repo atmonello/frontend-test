@@ -30,6 +30,10 @@ Handlebars.registerHelper("getNegative", function(positive, negative) {
     return "?";
 });
 
+Handlebars.registerHelper("getPersonIndex", function(index) {
+    return Number(index) + 1;
+});
+
 function createPeopleList(data) {
     console.log(data)
     var debugContainer = document.getElementsByClassName("ranking-list")[0];

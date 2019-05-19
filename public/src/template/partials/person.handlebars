@@ -4,6 +4,7 @@
         {{!-- <p>Negativo: {{getNegative person.positive person.negative}}</p> --}}
         <div class="person-image">
             <div style="background-image:url({{person.picture}})" class="person-image-container"></div>
+            <span class="person-image-index">{{getPersonIndex @index}}</span>
         </div>
         <div class="person-info">
             <h2 class="person-info-name">{{person.name}}</h2>
